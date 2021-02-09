@@ -18,16 +18,16 @@ var connection = mysql.createConnection({
     user: "root",
     password: "rootroot",
     database: "burgers_db"
-  });
+});
   
-  connection.connect(function(err) {
-    if (err) {
-      console.error("error connecting: " + err.stack);
-      return;
-    }
-    console.log("connected as id " + connection.threadId);
-  });
+connection.connect(function(err) {
+  if (err) {
+    console.error("error connecting: " + err.stack);
+    return;
+  };
+  console.log("connected as id " + connection.threadId);
+});
 
-  app.listen(PORT, function() {
+app.listen(PORT, function() {
     console.log("Server listening on: http://localhost:" + PORT);
-  });
+});
