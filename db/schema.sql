@@ -8,3 +8,7 @@ CREATE TABLE burgers (
     devoured BOOLEAN DEFAULT false,
     PRIMARY KEY(id)
 );
+
+INSERT INTO burgers ("burger_name", "devoured") VALUES "Double Bacon Cheeseburger", true;
+
+SELECT * FROM burgers;
