@@ -9,6 +9,6 @@ CREATE TABLE burgers (
     PRIMARY KEY(id)
 );
 
-INSERT INTO burgers ("burger_name", "devoured") VALUES "Double Bacon Cheeseburger", true;
+INSERT INTO burgers (burger_name, devoured) VALUES ("Double Bacon Cheeseburger", true);
 
 SELECT * FROM burgers;
