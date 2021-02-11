@@ -11,11 +11,13 @@
     {{/each}}
     </div>
     <div>
-    {{#each burgers}}
-      {{#if devoured}}
-        {{> burgers/burger-block devoured=true}}
-      {{/if}}
-    {{/each}}
+      <ol>
+        {{#each burgers}}
+          {{#if devoured}}
+            <li>{{this.burger_name}}</li>
+          {{/if}}
+        {{/each}}
+      </ol>
     </div>
 </div>
 
