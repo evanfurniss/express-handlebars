@@ -1,12 +1,13 @@
 // Require express
 var express = require("express");
+var path = require("path");
 
 var PORT = process.env.PORT || 8080;
 
 var app = express();
 
 // Use anything in the "public" folder
-app.use(express.static("public"));
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -21,6 +22,8 @@ app.set("view engine", "handlebars");
 var routes = require("./controllers/controller.js");
 
 app.use(routes);
+
+app.use(express.static("/public"));
 
 // Connected to front-end
 app.listen(PORT, function() {
