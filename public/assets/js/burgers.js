@@ -1,7 +1,9 @@
 $(function() {
   $(".delete-burger").on("click", function(event) {
+    event.preventDefault();
+
     var id = $(this).data("id");
-    var isEaten = { devoured:true };
+    var isEaten = { devoured:0 };
 
     // Send the PUT request.
     $.ajax("/api/burgers/" + id, {
@@ -25,7 +27,7 @@ $(function() {
     };
 
     // Send the POST request.
-    $.ajax("/api/cats", {
+    $.ajax("/api/burgers", {
       type: "POST",
       data: newBurger
     }).then(
