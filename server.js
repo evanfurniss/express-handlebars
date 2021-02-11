@@ -5,6 +5,7 @@ var PORT = process.env.PORT || 8080;
 
 var app = express();
 
+// Use anything in the "public" folder
 app.use(express.static("public"));
 
 app.use(express.urlencoded({ extended: true }));

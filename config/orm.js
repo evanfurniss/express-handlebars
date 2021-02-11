@@ -16,9 +16,13 @@ function objToSql(ob) {
   }
 
 var orm = {
-    // insertOne: function(){
-    //     let queryString = "INSERT INTO ?? (??) FROM ??";
-    // },
+    insertOne: function(table, col, vals, cb){
+        let queryString = `INSERT INTO ${table} (${col}) FROM ${vals}`;
+        connection.query(queryString, function(err, res){
+            if (err) throw (err);
+            cb(res);
+        });
+    },
     selectAll: function(tableName, cb){
         let queryString = `SELECT * FROM ${tableName}`;
         connection.query(queryString, function(err, res){
