@@ -4,14 +4,18 @@
 
 <div>
     <div>
-    {{#each cats}}
-        {{#if sleepy}}
-            {{> cats/cat-block sleep=false}}
-        {{/if}}
+    {{#each burgers}}
+      {{#if devoured}}
+        {{> burgers/burger-block devoured=false}}
+      {{/if}}
     {{/each}}
     </div>
     <div>
-
+    {{#each burgers}}
+      {{#if devoured}}
+        {{> burgers/burger-block devoured=true}}
+      {{/if}}
+    {{/each}}
     </div>
 </div>
 
