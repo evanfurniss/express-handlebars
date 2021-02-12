@@ -1,13 +1,13 @@
 <div>
-    <img src="../public/assets/pics/krabbyPatty.png" alt="Generic burger picture" >
+    <img src="assets/pics/krabbyPatty.png" alt="Generic burger picture" >
 </div>
 
 <div>
     <div>
     {{#each burgers}}
-      {{#if devoured}}
-        {{>burger devoured=false}}
-      {{/if}}
+      {{#unless devoured}}
+        {{>burgers/burger-block devoured=false}}
+      {{/unless}}
     {{/each}}
     </div>
     <div>
