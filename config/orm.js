@@ -17,7 +17,7 @@ function objToSql(ob) {
 
 var orm = {
     insertOne: function(table, col, vals, cb){
-        let queryString = `INSERT INTO ${table} (${col}) FROM ${vals}`;
+        let queryString = `INSERT INTO ${table} (${col}) VALUES ("${vals}")`;
         connection.query(queryString, function(err, res){
             if (err) throw (err);
             cb(res);

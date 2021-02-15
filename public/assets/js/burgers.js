@@ -3,7 +3,7 @@ $(function() {
     event.preventDefault();
 
     var id = $(this).data("id");
-    var isEaten = { devoured:0 };
+    var isEaten = { devoured:1 };
 
     $.ajax("/api/burgers/" + id, {
       type: "PUT",
